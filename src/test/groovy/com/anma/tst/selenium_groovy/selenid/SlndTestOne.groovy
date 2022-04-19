@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.SelenideElement
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test
 
@@ -25,7 +26,10 @@ public class SlndTestOne {
         Selenide.open(url)
         $(".infobox .vcard").selectOption(0)
         $(withText("Assigned")).shouldBe(Condition.visible)
-        SelenideElement element1 = $(".aaa")
+        def toc = $("#toc")
+        def tocHeading = $("#mw-toc-heading")
+        println(toc)
+        Assertions.assertEquals(tocHeading.text(), "Contents")
 
     }
 }
