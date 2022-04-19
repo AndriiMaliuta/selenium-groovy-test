@@ -11,7 +11,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.firefox.FirefoxDriver
 
-class SeleTest1 {
+class SeleniumOldTest {
 
     private WebDriver driver;
 
@@ -33,6 +33,7 @@ class SeleTest1 {
     @Test
     void openGoogle() {
         driver.get("https://google.com")
+//        driver.wait(2000)
         def input = driver.findElement(By.tagName("input"))
         input.sendKeys("Selenium")
     }
